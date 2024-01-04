@@ -4,22 +4,22 @@
 
 ## Column descriptions for King County Data Set
 
-1. id - unique identified for a house
-2. dateDate - house was sold
-3. pricePrice - is prediction target
-4. bedroomsNumber - of Bedrooms/House
-5. bathroomsNumber - of bathrooms/bedrooms
-6. sqft_livingsquare - footage of the home
-7. sqft_lotsquare - footage of the lot
-8. floorsTotal - floors (levels) in house
-9. waterfront - House which has a view to a waterfront
-10. view - Has been viewed
+1. id - uniquely identified for a house
+2. date- date house was sold
+3. price - is the prediction target
+4. bedrooms -  number of Bedrooms/House
+5. bathrooms- Number of bathrooms
+6. sqft_living - square footage of the home
+7. sqft_lot- square footage of the lot
+8. floors -total floors (levels) in house
+9. waterfront - House which has a view of a waterfront
+10. View - Has been viewed
 11. condition - How good the condition is ( Overall )
-12. grade - overall grade given to the housing unit, based on King County grading system
-13. sqft_above - square footage of house apart from basement
+12. grade - overall grade is given to the housing unit, based on the King County grading system
+13. sqft_above - square footage of the house apart from the basement
 14. sqft_basement - square footage of the basement
-15. yr_renovated - Year when house was renovated
-16. zipcode - zip
+15. yr_renovated - The year when house was renovated
+16. zip code - zip code of the house
 17. yr_built - Built Year
 18. lat - Latitude coordinate
 19. long - Longitude coordinate
@@ -62,19 +62,19 @@ We create various regression models, starting with a simple linear regression mo
   #### Interpretation
  R-squared: The R-squared value is 0.493, indicating that approximately 49.3% of the variance in price can be explained by the sqft_living.
 
-The model is statistically significant overall, with an F-statistic p-value well below 0.05 .The intercept is USD -4.399e+04 meaning that when all other variables are zero the estimated price is USD -4.399e+04 The coefficient is 280 meaning that for every unit increase in sqaure footage of sqft_living,the price increases by USD 280.8
+The model is statistically significant overall, with an F-statistic p-value well below 0.05.The intercept is USD -4.399e+04 meaning that when all other variables are zero the estimated price is USD -4.399e+04 The coefficient is 280 meaning that for every unit increase in square footage of sqft_living, the price increases by USD 280.8
 
 The model violates the normality assumptions of linear regression and homoscedasticity.
 
  ### Model 1b: log transformation of the model above.
   #### Interpretation
-The R-squared has slightly reduced but the the the normality and Homoscedasticity has improved as well.
+The R-squared has slightly reduced but the the normality and Homoscedasticity have improved as well.
 
 ### Model 2( First multiple regression model): bedrooms, bathrooms, sqft_living, sqft_lot, floors, waterfront, view, condition, grade, sqft_above, zipcode, lat, long, sqft_living15, year, Age_sold effect over price.
 #### Objective
 To investigate which variables affect price.
 #### Method
-Multiple linear regression modelling with all selected variables 
+Multiple linear regression modeling with all selected variables 
 
 #### Interpretation
 R-squared: The R-squared value is 0.772, indicating that approximately 77.2% of the variance in price can be explained by the 16 independent variables.
@@ -90,7 +90,7 @@ Statistical Significance: all the predictors are statistically significant with 
  #### Objective
  To identify the effect of the variables that have a high correlation with price and those that lack multicollinearity on price.
  #### Method
- Multiple linear regression modelling for bedrooms, bathrooms, sqft_living, floors, grade, sqft_living15
+ Multiple linear regression modeling for bedrooms, bathrooms, sqft_living, floors, grade, sqft_living15
 
  #### Interpretation
  The model is statistically significant overall, with an F-statistic p-value well below 0.05
@@ -111,13 +111,13 @@ Grade: For each additional grade point, the log-transformed price is expected to
 
 Sqft_living15: For each additional unit increase in square footage of living space in 2015, the log-transformed price is expected to increase by 0.00007114 units.
 
-the R-squared of model2 has dropped compared to the previous model from 77% to 54.6%. However, the cond.no has reduced and the model has better linearity and normality after dealing with the multicollinearity
+the R-squared of model 3 has dropped compared to the previous model from 77% to 54.6%. However, the cond.no has reduced and the model has better linearity and normality after dealing with the multicollinearity
 
 ### Model 4: We use categorical variables and sqft_living to predict price. We use the One-hot encoding technique to convert categorical variables into a binary to see if we get better results.
 #### Objective
 To identify the effect of categorical variables and sqft_living on price.
 #### Method
- Multiple linear regression modelling for categorical variables (waterfront, view, grade) and sqft_living on price.
+ Multiple linear regression modeling for categorical variables (waterfront, view, grade) and sqft_living on price.
  #### Interpretation
 
  The model is statistically significant overall, with an F-statistic p-value well below 0.05
@@ -140,15 +140,15 @@ grade_11: An increase in grade from 11 is associated with an increase of 0.7652 
 we can see that our R-squared has increased to 0.580 this is a good indication of a good fit. the rmse is also lower than the previous model next we will try to look at a few features together with categorical variables to see if we can enhance our model
 
 
-### Model 5: We use both categorical and numerical variables that have high correlation with price.
+### Model 5: We use both categorical and numerical variables that have a high correlation with price.
  #### Objective
  To identify the effect of categorical and numerical variables on price.
  #### Method
- Multiple linear regression modelling for categorical variables and numerical variables on price.
+ Multiple linear regression modeling for categorical variables and numerical variables on price.
   #### Interpretation
  The model is statistically significant overall, with an F-statistic p-value well below 0.05
 
-R-squared: The R-squared value is 0.590, indicating that approximately 59% of the variance in price can be explained by bedrooms,bathrooms,sqft_livn,view,condition,grade
+R-squared: The R-squared value is 0.590, indicating that approximately 59% of the variance in price can be explained by bedrooms, bathrooms,sqft_livn, view, condition, grade
 
 The intercept is USD 10.8598, indicating that when all other variables are zero, the estimated log-transformed price is USD 10.8598.
 
@@ -156,9 +156,9 @@ bedrooms:
 
 For each unit increase in the number of bedrooms, the log-transformed price is expected to decrease by USD 0.0163 units, holding other variables constant. More bedrooms are associated with a lower log-transformed price, all else being equal.
 
-bathrooms:The coefficient is not statistically significant (p-value = 0.243).
+bathrooms: The coefficient is not statistically significant (p-value = 0.243).
 
-sqft_living:For each unit increase in square footage of living space, the log-transformed price is expected to increase by USD 0.0002 units. Larger living spaces are associated with higher log-transformed prices. view:
+sqft_living: For each unit increase in square footage of living space, the log-transformed price is expected to increase by USD 0.0002 units. Larger living spaces are associated with higher log-transformed prices. view:
 
 For each unit increase in the view category, the log-transformed price is expected to increase by USD 0.1066 units. condition:
 
@@ -171,7 +171,7 @@ Model 1a. with 1 predictor (sqft_living) R-squared:0.493
 
 Model 1b. with 1 predictor (transformed price):R-squared:0.483
 
-Model 2. with all predictors (all_features):R-squared:0.499
+Model 2. with all predictors (all_features): R-squared:0.499
 
 Model 3 with 6 predictors (handled multicollinearity and low correlation):R-squared: 0.560 * Adj. R-squared: 0.559*
 
@@ -181,20 +181,20 @@ Model 5 with 6 predictors (more features and categorical data and features low p
 
 Model 1a (1 predictor - sqft_living): R-squared of 0.493 indicates that around 49.3% of the variance in the dependent variable is explained by sqft_living alone.
 
-Model 1b (1 predictor - transformed price): R-squared of 0.483 indicates that around 48.3% of the variance in the log-transformed price is explained by the predictor.
+Model 1b (1 predictor-transformed price): R-squared of 0.483 indicates that around 48.3% of the variance in the log-transformed price is explained by the predictor.
 
 Model 2 (all features): R-squared of 0.499 suggests that including all available predictors improves the explanation of variance compared to Model 1, but it's still relatively modest.
 
-Model 3 (6 predictors - handled multicollinearity and low correlation): R-squared of 0.560 and Adj. R-squared of 0.559 indicate an improvement in explaining variance, and addressing multicollinearity and low correlation has positively impacted the model.
+Model 3 (6 predictors - handled multicollinearity and low correlation): R-squared of 0.560 and Adj R-squared of 0.559 indicates an improvement in explaining variance, and addressing multicollinearity and low correlation has positively impacted the model.
 
-Model 4 (16 predictors - baseline and categorical variables): R-squared of 0.580 and Adj. R-squared of 0.580 indicate further improvement, especially with the inclusion of categorical variables.
+Model 4 (16 predictors - baseline and categorical variables): R-squared of 0.580 and Adj. R-squared of 0.580 indicates further improvement, especially with the inclusion of categorical variables.
 
-Model 5 (6 predictors - more features, categorical data, and low p-values): R-squared of 0.590 and Adj. R-squared of 0.589 suggest the highest explanatory power among the mentioned models. The inclusion of more features, categorical data, and low p-values has contributed to the improved performance.
+Model 5 (6 predictors - more features, categorical data, and low p-values): R-squared of 0.590 and Adj R-squared of 0.589 suggests the highest explanatory power among the mentioned models. The inclusion of more features, categorical data, and low p-values has contributed to the improved performance.
 
-BEST MODEL Model 5, which includes more features, categorical data, and low p-values, is chosen as the best model due to its higher R-squared value (0.590) and adjusted R-squared value (0.589). This model strikes a balance between explanatory power and complexity.The RMSE of approximately 0.3374 suggests that, on average, the model's predictions deviate from the actual values by around 0.3374 log-transformed units. This gives an indication of the typical error in the model's predictions.
+BEST MODEL Model 5, which includes more features, categorical data, and low p-values, is chosen as the best model due to its higher R-squared value (0.590) and adjusted R-squared value (0.589). This model strikes a balance between explanatory power and complexity. The RMSE of approximately 0.3374 suggests that, on average, the model's predictions deviate from the actual values by around 0.3374 log-transformed units. This gives an indication of the typical error in the model's predictions.
 
 ## Recommendations:
-based on findings from our model5:
+based on findings from our model 5:
 
 Consider the importance of bedrooms, sqft_living, view, condition, and grade when estimating or predicting housing prices.
 
@@ -217,7 +217,7 @@ Property Features Influence Pricing:
 
 Bedrooms, sqft_living, view, condition, and grade significantly influence housing prices. These features are essential considerations for buyers and sellers.
 
-There are limitations to the model and we used log transformation to meet assupmtions of linearity
+There are limitations to the model and we used log transformation to meet assumptions of linearity
 
 ## NEXT STEPS:
 gathering additional data on the homes as there may be key features missing.
