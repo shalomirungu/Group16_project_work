@@ -1,4 +1,6 @@
-# Performing multiple regression analysis to determine factors affecting price.
+.# Performing multiple regression analysis to determine factors affecting price.
+**Authors** Immaculate Mwendwa, Shalom Irungu, Stephen Kariuki, Stella Ndegwa, Muhsin Ahmed, Joan Wambua.
+
 ## Business Problem.
 A real estate agency in King County aims to provide valuable advice to homeowners on how specific home features will impact the estimated value of their homes. The primary objective is to help homeowners make informed decisions about which features could potentially yield the highest return on investment in terms of increased property value.
 
@@ -130,6 +132,65 @@ For each unit increase in the view category, the log-transformed price is expect
 For each unit increase in the condition rating, the log-transformed price is expected to increase by USD 0.0954 units. grade:
 
 For each unit increase in the grade rating, the log-transformed price is expected to increase by USD 0.1916 units.
+
+## SUMMARY OF THE MODELS
+Model 1a. with 1 predictor (sqft_living) R-squared:0.493
+
+Model 1b. with 1 predictor (transformed price):R-squared:0.483
+
+Model 2. with all predictors (all_features):R-squared:0.499
+
+Model 3 with 6 predictors (handled multicollinearity and low correlation):R-squared: 0.560 * Adj. R-squared: 0.559*
+
+Model 4 with 16 predictors (baseline and categorical variables):R-squared: 0.580 * Adj. R-squared: 0.580*
+
+Model 5 with 6 predictors (more features and categorical data and features low p-values):R-squared: 0.590 and * Adj. R-squared: 0.589*
+
+Model 1a (1 predictor - sqft_living): R-squared of 0.493 indicates that around 49.3% of the variance in the dependent variable is explained by sqft_living alone.
+
+Model 1b (1 predictor - transformed price): R-squared of 0.483 indicates that around 48.3% of the variance in the log-transformed price is explained by the predictor.
+
+Model 2 (all features): R-squared of 0.499 suggests that including all available predictors improves the explanation of variance compared to Model 1, but it's still relatively modest.
+
+Model 3 (6 predictors - handled multicollinearity and low correlation): R-squared of 0.560 and Adj. R-squared of 0.559 indicate an improvement in explaining variance, and addressing multicollinearity and low correlation has positively impacted the model.
+
+Model 4 (16 predictors - baseline and categorical variables): R-squared of 0.580 and Adj. R-squared of 0.580 indicate further improvement, especially with the inclusion of categorical variables.
+
+Model 5 (6 predictors - more features, categorical data, and low p-values): R-squared of 0.590 and Adj. R-squared of 0.589 suggest the highest explanatory power among the mentioned models. The inclusion of more features, categorical data, and low p-values has contributed to the improved performance.
+
+BEST MODEL Model 5, which includes more features, categorical data, and low p-values, is chosen as the best model due to its higher R-squared value (0.590) and adjusted R-squared value (0.589). This model strikes a balance between explanatory power and complexity.The RMSE of approximately 0.3374 suggests that, on average, the model's predictions deviate from the actual values by around 0.3374 log-transformed units. This gives an indication of the typical error in the model's predictions.
+
+## Recommendations:
+based on findings from our model5:
+
+Consider the importance of bedrooms, sqft_living, view, condition, and grade when estimating or predicting housing prices.
+
+Focus on upgrading property features to improve the overall grade. Communicate the potential financial returns associated with higher-grade properties.
+
+Investigate the inconsistency in the impact of bathrooms on pricing. Collect additional data or refine the variable to better capture its significance.
+
+Consider promoting properties with fewer bedrooms for buyers who prioritize cost-effectiveness. Highlight the advantages of smaller bedroom counts in terms of affordability.
+
+Capitalize on properties with better views, incorporating visuals and descriptions that showcase the scenic surroundings to attract potential buyers.
+
+Continuous efforts to improve the model can be made by exploring additional relevant features and refining existing ones.
+
+## Conclusions:
+Model Validity:
+
+The model provides a substantial explanation of housing price variance. However, the impact of bathrooms needs further investigation to enhance the model's validity.
+
+Property Features Influence Pricing:
+
+Bedrooms, sqft_living, view, condition, and grade significantly influence housing prices. These features are essential considerations for buyers and sellers.
+
+There are limitations to the model and we used log transformation to meet assupmtions of linearity
+
+## NEXT STEPS:
+gathering additional data on the homes as there may be key features missing.
+
+methods other than regression could be used to meet assumptions
+
 
  
 
