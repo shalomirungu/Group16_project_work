@@ -2,7 +2,7 @@
 ### Business Problem.
 A real estate agency in King County aims to provide valuable advice to homeowners on how specific home features will impact the estimated value of their homes. The primary objective is to help homeowners make informed decisions about which features could potentially yield the highest return on investment in terms of increased property value.
 
-### Data ([kc_house_data.csv](./data/kc_house_data.csv)
+### Data ([kc_house_data.csv](./data/kc_house_data.csv))
 We have been provided with The King County House Sales dataset which contains property sales between the years 2014 - 2015 and 21,420 records of houses sold. Each record in the data set gives features such as the number of bedrooms, the size of various rooms in square feet, about the individual homes.
  #### Objectives
 1. Develop a model that will assist home buyers and home sellers in identifying attributes that influence the prices of houses.
@@ -16,7 +16,7 @@ We explore the data and clean it up. Thereafter, we visualize to have a better u
 
 ### Modelling
 We create various regression models, starting with a simple linear regression model as our baseline, and then proceeding to multiple linear regression models.
- #### Baseline Model : sqft_living effect on price.
+ ####  Model 1a : sqft_living effect on price.
   ##### Objective
   To investigate the effect  of sqft_living on the price
   ##### Method
@@ -24,7 +24,7 @@ We create various regression models, starting with a simple linear regression mo
   ##### Interpretation
   At an alpha of 0.05, the model is statistically significant. The model explains 45.5% of the variance in price. Both the intercept and the target variable p-values are less than alpha hence the coefficients are statistically significant. price = 6.723 + 0.8376 sqft_living. An increase of 1 sq foot in sqft_living will result in an increase in house price by 83.76%.
 
-#### Model 1( First multiple regression model): bedrooms, bathrooms, sqft_living, sqft_lot, floors, waterfront, view, condition, grade, sqft_above, zipcode, lat, long, sqft_living15, year, Age_sold effect over price.
+#### Model 2( First multiple regression model): bedrooms, bathrooms, sqft_living, sqft_lot, floors, waterfront, view, condition, grade, sqft_above, zipcode, lat, long, sqft_living15, year, Age_sold effect over price.
 ##### Objective
 To investigate which variables affect price.
 ##### Method
@@ -40,7 +40,7 @@ Statistical Significance: all the predictors are statistically significant with 
  The model has a high R-squared of 0.772 showing that 77.2% of the variance in price is explained. However, there is non-normality in residuals and the condition number is high showing that there is high collinearity between the variables. Next, we do feature selection to enhance the model.
  
 
- #### Model 2: We remove the variables that have a low correlation with price and those that have high multicollinearity (price, view, condition, Age_sold, year, zip code, waterfront, lat, long, sqft_above, sqft_lot, sqft_lot15)
+ #### Model 3: We remove the variables that have a low correlation with price and those that have high multicollinearity (price, view, condition, Age_sold, year, zip code, waterfront, lat, long, sqft_above, sqft_lot, sqft_lot15)
  ##### Objective
  To identify the effect of the variables that have a high correlation with price and those that lack multicollinearity on price.
  ##### Method
@@ -67,7 +67,7 @@ Sqft_living15: For each additional unit increase in square footage of living spa
 
 the R-squared of model2 has dropped compared to the previous model from 77% to 54.6%. However, the cond.no has reduced and the model has better linearity and normality after dealing with the multicollinearity
 
-#### Model 3: We use categorical variables and sqft_living to predict price. We use the One-hot encoding technique to convert categorical variables into a binary to see if we get better results.
+#### Model 4: We use categorical variables and sqft_living to predict price. We use the One-hot encoding technique to convert categorical variables into a binary to see if we get better results.
 ##### Objective
 To identify the effect of categorical variables and sqft_living on price.
 ##### Method
@@ -92,6 +92,38 @@ grade_11: An increase in grade from 11 is associated with an increase of 0.7652 
 
 
 we can see that our R-squared has increased to 0.580 this is a good indication of a good fit. the rmse is also lower than the previous model next we will try to look at a few features together with categorical variables to see if we can enhance our model
+
+
+#### Model 5: We use both categorical and numerical variables that have high correlation with price.
+ ##### Objective
+ To identify the effect of categorical and numerical variables on price.
+ ##### Method
+ Multiple linear regression modelling for categorical variables and numerical variables on price.
+  ##### Interpretation
+ The model is statistically significant overall, with an F-statistic p-value well below 0.05
+
+R-squared: The R-squared value is 0.590, indicating that approximately 59% of the variance in price can be explained by bedrooms,bathrooms,sqft_livn,view,condition,grade
+
+The intercept is USD 10.8598, indicating that when all other variables are zero, the estimated log-transformed price is USD 10.8598.
+
+bedrooms:
+
+For each unit increase in the number of bedrooms, the log-transformed price is expected to decrease by USD 0.0163 units, holding other variables constant. More bedrooms are associated with a lower log-transformed price, all else being equal.
+
+bathrooms:The coefficient is not statistically significant (p-value = 0.243).
+
+sqft_living:For each unit increase in square footage of living space, the log-transformed price is expected to increase by USD 0.0002 units. Larger living spaces are associated with higher log-transformed prices. view:
+
+For each unit increase in the view category, the log-transformed price is expected to increase by USD 0.1066 units. condition:
+
+For each unit increase in the condition rating, the log-transformed price is expected to increase by USD 0.0954 units. grade:
+
+For each unit increase in the grade rating, the log-transformed price is expected to increase by USD 0.1916 units.
+
+ 
+
+
+
 
  
  
