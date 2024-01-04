@@ -6,28 +6,27 @@ Please fill out:
 
 ## Column descriptions for King County Data Set
 
-id - unique identified for a house
-dateDate - house was sold
-pricePrice - is prediction target
-bedroomsNumber - of Bedrooms/House
-bathroomsNumber - of bathrooms/bedrooms
-sqft_livingsquare - footage of the home
-sqft_lotsquare - footage of the lot
-floorsTotal - floors (levels) in house
-waterfront - House which has a view to a waterfront
-view - Has been viewed
-condition - How good the condition is ( Overall )
-grade - overall grade given to the housing unit, based on King County
-grading system
-sqft_above - square footage of house apart from basement
-sqft_basement - square footage of the basement
-yr_renovated - Year when house was renovated
-zipcode - zip
-yr_built - Built Year
-lat - Latitude coordinate
-long - Longitude coordinate
-sqft_living15 - The square footage of interior housing living space for the nearest 15 neighbors
-sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
+1. id - unique identified for a house
+2. dateDate - house was sold
+3. pricePrice - is prediction target
+4. bedroomsNumber - of Bedrooms/House
+5. bathroomsNumber - of bathrooms/bedrooms
+6. sqft_livingsquare - footage of the home
+7. sqft_lotsquare - footage of the lot
+8. floorsTotal - floors (levels) in house
+9. waterfront - House which has a view to a waterfront
+10. view - Has been viewed
+11. condition - How good the condition is ( Overall )
+12. grade - overall grade given to the housing unit, based on King County grading system
+13. sqft_above - square footage of house apart from basement
+14. sqft_basement - square footage of the basement
+15. yr_renovated - Year when house was renovated
+16. zipcode - zip
+17. yr_built - Built Year
+18. lat - Latitude coordinate
+19. long - Longitude coordinate
+20. sqft_living15 - The square footage of interior housing living space for the nearest 15 neighbors
+21. sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
 ## Business Problem.
 A real estate agency in King County aims to provide valuable advice to homeowners on how specific home features will impact the estimated value of their homes. The primary objective is to help homeowners make informed decisions about which features could potentially yield the highest return on investment in terms of increased property value.
