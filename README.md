@@ -1,5 +1,33 @@
 .# Performing multiple regression analysis to determine factors affecting price.
 **Authors** Immaculate Mwendwa, Shalom Irungu, Stephen Kariuki, Stella Ndegwa, Muhsin Ahmed, Joan Wambua.
+inal Project Submission
+Please fill out:
+
+
+## Column descriptions for King County Data Set
+
+id - unique identified for a house
+dateDate - house was sold
+pricePrice - is prediction target
+bedroomsNumber - of Bedrooms/House
+bathroomsNumber - of bathrooms/bedrooms
+sqft_livingsquare - footage of the home
+sqft_lotsquare - footage of the lot
+floorsTotal - floors (levels) in house
+waterfront - House which has a view to a waterfront
+view - Has been viewed
+condition - How good the condition is ( Overall )
+grade - overall grade given to the housing unit, based on King County
+grading system
+sqft_above - square footage of house apart from basement
+sqft_basement - square footage of the basement
+yr_renovated - Year when house was renovated
+zipcode - zip
+yr_built - Built Year
+lat - Latitude coordinate
+long - Longitude coordinate
+sqft_living15 - The square footage of interior housing living space for the nearest 15 neighbors
+sqft_lot15 - The square footage of the land lots of the nearest 15 neighbors
 
 ## Business Problem.
 A real estate agency in King County aims to provide valuable advice to homeowners on how specific home features will impact the estimated value of their homes. The primary objective is to help homeowners make informed decisions about which features could potentially yield the highest return on investment in terms of increased property value.
@@ -35,7 +63,15 @@ We create various regression models, starting with a simple linear regression mo
   #### Method
   Simple linear regression with price and sqft_living as dependent and independent variables respectively.
   #### Interpretation
-  At an alpha of 0.05, the model is statistically significant. The model explains 45.5% of the variance in price. Both the intercept and the target variable p-values are less than alpha hence the coefficients are statistically significant. price = 6.723 + 0.8376 sqft_living. An increase of 1 sq foot in sqft_living will result in an increase in house price by 83.76%.
+ R-squared: The R-squared value is 0.493, indicating that approximately 49.3% of the variance in price can be explained by the sqft_living.
+
+The model is statistically significant overall, with an F-statistic p-value well below 0.05 .The intercept is USD -4.399e+04 meaning that when all other variables are zero the estimated price is USD -4.399e+04 The coefficient is 280 meaning that for every unit increase in sqaure footage of sqft_living,the price increases by USD 280.8
+
+The model violates the normality assumptions of linear regression and homoscedasticity.
+
+ ### Model 1b: log transformation of the model above.
+  #### Interpretation
+The R-squared has slightly reduced but the the the normality and Homoscedasticity has improved as well.
 
 ### Model 2( First multiple regression model): bedrooms, bathrooms, sqft_living, sqft_lot, floors, waterfront, view, condition, grade, sqft_above, zipcode, lat, long, sqft_living15, year, Age_sold effect over price.
 #### Objective
