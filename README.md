@@ -1,7 +1,5 @@
 # Performing multiple regression analysis to determine factors affecting price.
-**Authors** Immaculate Mwendwa, Shalom Irungu, Stephen Kariuki, Stella Ndegwa, Muhsin Ahmed, Joan Wambua.
-inal Project Submission
-Please fill out:
+**Authors** Immaculate Mwendwa, Shalom Irungu, Stephen Kariuki, Stella Ndegwa, Muhsin Ahmed, Joan Wambu
 
 
 ## Column descriptions for King County Data Set
