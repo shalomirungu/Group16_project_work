@@ -14,6 +14,17 @@ We have been provided with The King County House Sales dataset which contains pr
 ### Methods
 We explore the data and clean it up. Thereafter, we visualize to have a better understanding of the data and create linear models, with price as our dependent variable, to gain a better insight of the variables that affect house price.
 
+### Data Visualization to understand how various variables correlate with price.
+
+![2024-01-04 (14)](https://github.com/shalomirungu/Group16_project_work/assets/149403427/550089b4-9be4-4160-97c5-68836651bfd4)
+![2024-01-04 (4)](https://github.com/shalomirungu/Group16_project_work/assets/149403427/5f201944-e3d7-4c0f-a7d8-2017523d091c)
+![2024-01-04 (5)](https://github.com/shalomirungu/Group16_project_work/assets/149403427/bbeca770-8634-4de6-801a-e2b1a46ada84)
+![2024-01-04 (8)](https://github.com/shalomirungu/Group16_project_work/assets/149403427/9dd566ae-f3d8-4e1c-ab5d-5d47f745c1d7)
+![2024-01-04 (9)](https://github.com/shalomirungu/Group16_project_work/assets/149403427/96278e95-c4d3-4ef8-b9bc-253f3f81e5f6)
+![2024-01-04 (10)](https://github.com/shalomirungu/Group16_project_work/assets/149403427/5a526e6d-d30c-46af-b8e8-748daa0b16cc)
+![2024-01-04 (11)](https://github.com/shalomirungu/Group16_project_work/assets/149403427/a6ae76ba-1f22-45c3-a3db-b35620f3c9b7)
+![2024-01-04 (13)](https://github.com/shalomirungu/Group16_project_work/assets/149403427/bbc7ec61-85a2-49e0-82b0-d422d4a52435)
+
 ### Modelling
 We create various regression models, starting with a simple linear regression model as our baseline, and then proceeding to multiple linear regression models.
  ####  Model 1a : sqft_living effect on price.
